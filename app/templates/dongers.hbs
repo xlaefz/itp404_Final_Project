@@ -1,0 +1,44 @@
+{{outlet}}
+<h1> Here are some Dongers I parsed recently, when I was practicing web scraping</h1>
+{{#each model as |donger|}}
+<article class="listing">
+  <h3>COOL</h3>
+  <div class="detail owner">
+    {{#each donger.COOL as |individual|}}
+      <br>{{individual}}<br>
+    {{/each}}
+  </div>
+</article>
+<article class="listing">
+  <h3>Magic</h3>
+  <div class="detail owner">
+    {{#each donger.MAGIC as |individual|}}
+    <br>{{individual}}<br>
+    {{/each}}
+  </div>
+</article>
+<article class="listing">
+  <h3>Dunno</h3>
+  <div class="detail owner">
+    {{#each donger.DUNNO as |individual|}}
+    <br> {{individual}} <br>
+    {{/each}}
+  </div>
+</article>
+<article class="listing">
+  <h3>Ameno</h3>
+  <div class="detail owner">
+    {{#each donger.AMENO as |individual|}}
+    <br>{{individual}}<br>
+    {{/each}}
+  </div>
+</article>
+<article class="listing">
+  <h3>Sad</h3>
+  <div class="detail owner">
+    {{#each donger.SAD as |individual|}}
+    <br>{{individual}}<br>
+    {{/each}}
+  </div>
+</article>
+{{/each}}

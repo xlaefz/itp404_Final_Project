@@ -1,0 +1,30 @@
+<!-- <h2 id="title"> ᕕ( ՞ ᗜ ՞ )ᕗ   Jason's Blog</h2> -->
+<div class="container">
+  <div class="menu">
+    {{#link-to 'index'}}
+      <h1 class="left">
+        <em>ᕕ( ՞ ᗜ ՞ )ᕗ   Jason's Blog</em>
+      </h1>
+    {{/link-to}}
+    <div class="left links">
+      {{#link-to 'about'}}
+        About
+      {{/link-to}}
+      {{#link-to 'contact'}}
+        Contact
+      {{/link-to}}
+      {{#link-to 'dongers'}}
+        Dongers
+      {{/link-to}}
+      {{#link-to 'coffee-tracker'}}
+        Coffee Tracker
+      {{/link-to}}
+      {{#link-to 'political-interest'}}
+        Political Interest
+      {{/link-to}}
+    </div>
+  </div>
+  <div class="body">
+    {{outlet}}
+  </div>
+</div>
