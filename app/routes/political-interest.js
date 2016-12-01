@@ -18,7 +18,7 @@ export default Ember.Route.extend({
     };
 
     return Ember.RSVP.hash(promises).then(function(hash){
-      console.log(hash);
+      // console.log(hash);
       return hash;
     });
   }
