@@ -24,10 +24,21 @@ export default Ember.Route.extend({
         }
         return trumpsum;
         });
+    var harambesum = 0;
+    var promise3 = $.ajax({
+        type:'get',
+        url: 'http://localhost:3000/tweets/harambe'
+      }).done(function(json){
+        for(var i = 0 ; i < json.length; i++){
+          harambesum = harambesum+ json[i].friends_count;
+        }
+        return harambesum;
+        });
 
     var promises = {
       hilarysearch: promise1,
       trumpsearch: promise2,
+      harambesearch: promise3,
     };
 
     return Ember.RSVP.hash(promises).then(function(hash){
@@ -38,8 +49,10 @@ export default Ember.Route.extend({
       results.push(titles);
       var hilary = ["Hilary", sum];
       var trump = ["Trump", trumpsum];
+      var harambe = ["Harambe", harambesum];
       results.push(hilary);
       results.push(trump);
+      results.push(harambe);
       return results;
     });
   }
