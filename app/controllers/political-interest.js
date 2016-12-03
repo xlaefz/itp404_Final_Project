@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   options: {
-      title: 'Coffee',
+      title: 'Twitter Influence',
       height: 600,
       width: 600,
 

@@ -2253,7 +2253,7 @@ export default Ember.Route.extend({
   model() {
     for(var donger in dongers){
       var dataCopy = dongers[donger];
-      console.log(dongers[0].COOL)
+      console.log(dongers)
       return dongers
     }
   }

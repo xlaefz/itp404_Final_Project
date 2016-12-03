@@ -1,13 +1,6 @@
 import Ember from 'ember';
+var {$} = Ember;
 
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
 
 export default Ember.Route.extend({
 
@@ -30,7 +23,6 @@ export default Ember.Route.extend({
       });
         label.push(labele);
         montrealdata.push(["Coffee Shops", "Ratings"]);
-        var arraylength = label[0].length;
         for(var i = 0 ; i < 4; i++){
           montrealdata.push(label[0][i]);
         }
@@ -47,7 +39,6 @@ export default Ember.Route.extend({
         });
           label1.push(labele);
           ladata.push(["Coffee Shops", "Ratings"]);
-          var arraylength = label1[0].length;
           for(var i = 0 ; i < 4; i++){
             ladata.push(label1[0][i]);
           }
@@ -64,23 +55,27 @@ export default Ember.Route.extend({
           });
             label2.push(labele);
             nydata.push(["Coffee Shops", "Ratings"]);
-            var arraylength = label2[0].length;
             for(var i = 0 ; i < 4; i++){
               nydata.push(label2[0][i]);
             }
             return labele;
           });
       var promises = {
-        montreal: montrealdata,
-        la: ladata,
-        ny: nydata,
-      }
-      return Ember.RSVP.hash(promises).then(function(hash){
+        montreal: promise1,
+        la: promise2,
+        ny: promise3,
+      };
+      return Ember.RSVP.hash(promises).then(function(){
         // console.log(hash);
-        return hash;
+        var JZreturnthis = {
+          montreal: montrealdata,
+          la: ladata,
+          ny: nydata,
+        };
+        return JZreturnthis;
       });
     },
-    afterModel: function(posts, transition) {
-      console.log(posts)
+    afterModel: function(posts) {
+      console.log(posts);
     }
 });

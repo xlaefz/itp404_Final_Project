@@ -9,19 +9,18 @@
 {{!-- stats/template.hbs --}}
 <!-- {{log model}} -->
 <!-- {{log model.la}} -->
-<h1 class="center">
-  <em>ᕕ( ՞ ᗜ ՞ )ᕗ  Top Coffee Shops in Montreal Ratings</em>
-</h1>
-{{bar-chart data=model.montreal options=options}}<br>
 
 <h1 class="center">
-  <em>ᕕ(⌐■_■)ᕗ ♪♬  Top Coffee Shops in Los Angeles Ratings</em>
+  <em class = "meme">ᕕ( ՞ ᗜ ՞ )ᕗ  Top Coffee Shops in Montreal Ratings</em>
 </h1>
-{{bar-chart data=model.la options=options}}<br>
+<div class = "meimei">{{bar-chart data=model.montreal options=options}}<br></div>
+
 <h1 class="center">
-  <em>ᕕ(⌐■_■)ᕗ ♪♬  Top Coffee Shops in Los Angeles Ratings</em>
+  <em class = "meme">ᕕ(⌐■_■)ᕗ ♪♬  Top Coffee Shops in Los Angeles Ratings</em>
 </h1>
+<div class = "meimei">{{bar-chart data=model.la options=options}}<br></div>
+
 <h1 class="center">
-  <em>(つ◉益◉)つ  Top Coffee Shops in New York Ratings</em><br>
+  <em class = "meme">(つ◉益◉)つ  Top Coffee Shops in New York Ratings</em><br>
 </h1>
-{{bar-chart data=model.ny options=options}}
+<div class = "meimei"> {{bar-chart data=model.ny options=options}} </div>

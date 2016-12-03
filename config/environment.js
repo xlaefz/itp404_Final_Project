@@ -24,14 +24,18 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.apiEndpoint = 'http://localhost:3000'
   }
-
+  if (environment === 'development') {
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    }
+  }
   if (environment === 'test') {
+
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    }
     // Testem prefers this...
     ENV.locationType = 'none';
 
@@ -43,7 +47,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    // ENV.APP.apiEndpoint =
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    }
   }
 
   return ENV;
