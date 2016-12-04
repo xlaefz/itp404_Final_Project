@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     var sum = 0;
     var promise1 = $.ajax({
         type:'get',
-        url: 'http://localhost:3000/tweets/hilary'
+        url: 'https://jason-zheng-api.herokuapp.com/tweets/hilary'
       }).done(function(json){
         for(var i = 0 ; i < json.length; i++){
           sum = sum+ json[i].friends_count;
@@ -17,7 +17,7 @@ export default Ember.Route.extend({
     var trumpsum = 0;
     var promise2 = $.ajax({
         type:'get',
-        url: 'http://localhost:3000/tweets/trump'
+        url: 'https://jason-zheng-api.herokuapp.com/tweets/trump'
       }).done(function(json){
         for(var i = 0 ; i < json.length; i++){
           trumpsum = trumpsum+ json[i].friends_count;
@@ -27,7 +27,7 @@ export default Ember.Route.extend({
     var harambesum = 0;
     var promise3 = $.ajax({
         type:'get',
-        url: 'http://localhost:3000/tweets/harambe'
+        url: 'https://jason-zheng-api.herokuapp.com/tweets/harambe'
       }).done(function(json){
         for(var i = 0 ; i < json.length; i++){
           harambesum = harambesum+ json[i].friends_count;

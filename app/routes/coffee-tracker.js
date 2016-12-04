@@ -1,6 +1,8 @@
 import Ember from 'ember';
 var {$} = Ember;
-
+import ENV from 'ember-blog/config/environment'
+import ENV2 from 'ember-blog/config/environment'
+import ENV3 from 'ember-blog/config/environment'
 
 export default Ember.Route.extend({
 
@@ -15,7 +17,7 @@ export default Ember.Route.extend({
 
     var promise1 = $.ajax({
       type:'get',
-      url: 'http://localhost:3000/coffee/montreal'
+      url: 'https://jason-zheng-api.herokuapp.com/coffee/montreal'
     }).done(function(json){
       var labele = json.map(function(obj){
         return [obj.id, obj.rating];
@@ -31,7 +33,7 @@ export default Ember.Route.extend({
 
       var promise2 = $.ajax({
         type:'get',
-        url: 'http://localhost:3000/coffee/losangeles'
+        url: 'https://jason-zheng-api.herokuapp.com/coffee/losangeles'
       }).done(function(json){
         var labele = json.map(function(obj){
           return [obj.id, obj.rating];
@@ -47,7 +49,7 @@ export default Ember.Route.extend({
 
         var promise3 = $.ajax({
           type:'get',
-          url: 'http://localhost:3000/coffee/newyork'
+          url: 'https://jason-zheng-api.herokuapp.com/coffee/newyork'
         }).done(function(json){
           var labele = json.map(function(obj){
             return [obj.id, obj.rating];
